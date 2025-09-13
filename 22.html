@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Clima</title>
+</head>
+<body>
+     Temperatura do ambiente (°C): <input type="text" id="id_temperatura"><br><br>
+
+     <button onclick="verificarClima()">Verificar clima</button>
+
+     <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function verificarClima(){
+        var temp = Number(id_temperatura.value);
+        resultado.innerHTML = "";
+
+        if(temp < 10){
+            resultado.innerHTML = `
+                <p>Apropriada p/ conservar alimento</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="Alimento bom" width="100">
+            `;
+        }
+
+       
+        if(temp >= 10){
+            resultado.innerHTML = `
+                <p>Inapropriada p/ conservar alimento</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046860.png" alt="Alimento estragado" width="100">
+            `;
+        }
+    }
+</script>

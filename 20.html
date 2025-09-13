@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Economia</title>
+</head>
+<body>
+     Meta de economia: <input type="text" id="id_meta"><br><br>
+     Valor guardado: <input type="text" id="id_guardado"><br><br>
+
+     <button onclick="analisarEconomia()">Analisar economia</button>
+
+     <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function analisarEconomia(){
+        var meta = Number(id_meta.value);
+        var guardado = Number(id_guardado.value);
+        resultado.innerHTML = ""; // Limpa mensagens anteriores
+
+        // Meta alcançada ou ultrapassada
+        if(guardado >= meta){
+            resultado.innerHTML += "Parabéns, meta alcançada!<br>";
+        }
+        if(guardado > meta){
+            var ultrapassou = guardado - meta;
+            resultado.innerHTML += `Meta ultrapassada em R$ ${ultrapassou.toFixed(2)}<br>`;
+        }
+
+        // Meta não alcançada
+        if(guardado < meta){
+            var falta = meta - guardado;
+            resultado.innerHTML += `Força! Ainda em busca da meta! Falta R$ ${falta.toFixed(2)}<br>`;
+        }
+    }
+</script>

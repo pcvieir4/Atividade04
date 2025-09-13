@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Ímpar</title>
+</head>
+<body>
+     Número: <input type="text" id="id_numero"><br><br>
+
+     <button onclick="analisarNumero()">Analisar</button>
+
+     <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function analisarNumero(){
+        var numero = Number(id_numero.value);
+        resultado.innerHTML = ""; // Limpa mensagens anteriores
+
+        if(numero % 2 === 0){
+            resultado.innerHTML = `<span style="color:red; background-color:yellow;">Esse número é PAR</span>`;
+        }
+        if(numero % 2 !== 0){
+            resultado.innerHTML = `<span style="color:blue; font-weight:bold;">Esse número é IMPAR</span>`;
+        }
+    }
+</script>

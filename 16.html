@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Peso no Elevador - v2</title>
+</head>
+<body>
+     Quantidade de homens: <input type="text" id="id_homens"><br><br>
+     Quantidade de mulheres: <input type="text" id="id_mulheres"><br><br>
+
+     <button onclick="ligarElevador()">Ligar elevador</button>
+
+     <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function ligarElevador(){
+        var homens = Number(id_homens.value);
+        var mulheres = Number(id_mulheres.value);
+
+        var pesoTotal = (homens * 90) + (mulheres * 70);
+        resultado.innerHTML = ""; // Limpa mensagens anteriores
+
+        if(pesoTotal <= 500){
+            resultado.innerHTML = `<span style="color:green;">Elevador vai se mover, pois está com ${pesoTotal}kg</span>`;
+        }
+        if(pesoTotal > 500){
+            var excesso = pesoTotal - 500;
+            resultado.innerHTML = `<span style="color:red;">Alguém precisa descer. Precisa perder ${excesso}kg para mover o elevador</span>`;
+        }
+    }
+</script>

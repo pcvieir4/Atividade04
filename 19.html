@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado BOM DOCE</title>
+</head>
+<body>
+     Quantidade de chocolates: <input type="text" id="id_qtd"><br><br>
+
+     <button onclick="calcularCompra()">Compra</button>
+
+     <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcularCompra(){
+        var qtd = Number(id_qtd.value);
+        var preco = 3.00;
+
+        // Aplica desconto se comprar mais de 12 chocolates
+        if(qtd > 12){
+            preco = 2.50;
+        }
+
+        var valorTotal = qtd * preco;
+        resultado.innerHTML = `O valor da sua compra foi de R$ ${valorTotal.toFixed(2)}`;
+    }
+</script>

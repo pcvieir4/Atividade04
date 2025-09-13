@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Divisibilidade</title>
+</head>
+<body>
+     Primeiro número: <input type="text" id="id_num1"><br><br>
+     Segundo número: <input type="text" id="id_num2"><br><br>
+
+     <button onclick="testarDivisibilidade()">Testar</button>
+
+     <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function testarDivisibilidade(){
+        var num1 = Number(id_num1.value);
+        var num2 = Number(id_num2.value);
+        resultado.innerHTML = ""; // Limpa mensagens anteriores
+
+        // Evita divisão por zero
+        if(num2 === 0){
+            resultado.innerHTML = "Divisão por zero não é permitida!";
+        }
+
+        // Divisível
+        if(num2 !== 0 && num1 % num2 === 0){
+            resultado.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Positivo" width="100">`;
+        }
+
+        // Não divisível
+        if(num2 !== 0 && num1 % num2 !== 0){
+            resultado.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png" alt="Negativo" width="100">`;
+        }
+    }
+</script>

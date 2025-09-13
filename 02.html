@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Quantas latinhas você toma:
+        <input type="text" id="id_refri">
+        <button onclick="quantosRefri()">Quantos Refri</button>
+
+        <div id="quantasLatas"></div>
+</body>
+</html>
+
+<script>
+    function quantosRefri(){
+        var latinhas = Number(id_refri.value);
+        var consumoAno = latinhas * 365;
+        quantasLatas.innerHTML = `você consome ${consumoAno} latinhas por ano`;
+
+        if (consumoAno >= 500){
+            quantasLatas.innerHTML +=`<br><br>Cuidado com a diabete`;
+        }
+    }
+</script>

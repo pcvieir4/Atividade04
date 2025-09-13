@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Frequência do Aluno</title>
+</head>
+<body>
+     Frequência do aluno (%): <input type="text" id="id_frequencia"><br><br>
+
+     <button onclick="analisarFrequencia()">Analisar frequência</button>
+
+     <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function analisarFrequencia(){
+        var freq = Number(id_frequencia.value);
+        resultado.innerHTML = ""; 
+        
+       
+        if(freq < 50){
+            resultado.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/3284/3284589.png" alt="Aluno Turista" width="100">`;
+        }
+
+       
+        if(freq >= 50){
+            resultado.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/194/194938.png" alt="Aluno estudioso" width="100">`;
+        }
+    }
+</script>
